@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>视频&直播播放器</title>
+		<link rel="stylesheet" href="public/css/DPlayer.min.css">
+	</head>
+	<body>
+		<div id="dplayer"></div>
+		<script src="public/js/hls.min.js"></script>
+		<script src="public/js/DPlayer.min.js"></script>
+		<script>
+			const dp = new DPlayer({
+			    container: document.getElementById('dplayer'),
+			    live: true,
+//			    danmaku: false,
+//			    apiBackend: {
+//			        read: function (endpoint, callback) {
+//			            console.log('Pretend to connect WebSocket');
+//			            callback();
+//			        },
+//			        send: function (endpoint, danmakuData, callback) {
+//			            console.log('Pretend to send danamku via WebSocket', danmakuData);
+//			            callback();
+//			        }
+//			    },
+			    video: {
+			        url: 'live.wordcsu.com/cai/20181111.m3u8',
+			        type: 'hls'
+			    }
+			});
+		</script>
+	</body>
+</html>
